@@ -1,0 +1,40 @@
+<!-- Modal -->
+<div class="modal fade" id="modalZombieEdit" #modalZombieEdit tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar zombie</h5>
+                <button (click)="cargarDatos()" class="btn btn-primary pull-right">
+                    <i class="fas fa-download"></i>Cargar Datos
+                </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="position-relative form-group">
+                    <label for="Name">Nombre</label>
+                    <input [(ngModel)]='Name' name="Name" id="Name" placeholder="Introduzca el nombre" type="text" class="form-control form-control-sm" value="{{Name}}">
+                </div>
+                <div class="position-relative form-group">
+                    <label for="Mail">Email</label>
+                    <input [(ngModel)]='Mail' name="Mail" id="Mail" placeholder="Introduzca el email" type="email" class="form-control form-control-sm">
+                </div>
+                <div class="position-relative form-group">
+                    <label for="Type">Tipo</label>
+                    <select [(ngModel)]='Type' name="Type" id="Type" placeholder="Introduzca el tipo" class="form-control form-control-sm">
+                        <option>Alumno</option>
+                        <option>Maestro</option>
+                        <option>Creator</option>
+                        <option>Drawer</option>
+                        <option>Fighter</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button (click)="editarZombie()" type="button" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>

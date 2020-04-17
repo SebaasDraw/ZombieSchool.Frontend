@@ -1,0 +1,35 @@
+<div class="">
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Cerebros en venta</h5>
+            <table class="mb-0 table">
+                <thead>
+                    <tr>
+                        <th>Vendedor</th>
+                        <th>Sabor</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cerebro of cerebros | async; let i = index">
+                        <td>{{ cerebro.User }}</td>
+                        <td>{{ cerebro.Flavor }}</td>
+                        <td>{{ cerebro.Description }}</td>
+                        <td>${{ cerebro.Price }}</td>
+                        <td>
+                            <img src="{{ cerebro.Picture }}" alt="{{ cerebro.Picture }}" width="50">
+                        </td>
+                        <td>
+                            <button class="mb-2 mr-2 border-0 btn-transition btn btn-outline-info" (click)="pasarDatos(cerebro.User, cerebro.Flavor, cerebro.Price)" data-toggle="modal" data-target="#modalCerebroRequest">
+                                <i class="fas fa-shopping-basket"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

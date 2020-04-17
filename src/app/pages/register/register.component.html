@@ -1,0 +1,44 @@
+<div class="h-100 bg-premium-dark">
+    <div class="d-flex h-100 justify-content-center align-items-center">
+        <div class="mx-auto app-login-box col-md-8">
+            <div class="app-logo-inverse mx-auto mb-3"></div>
+            <div class="modal-dialog w-100">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h5 class="modal-title">
+                            <h4 class="mt-2">
+                                <div>¡Registrate!</div>
+                            </h4>
+                        </h5>
+                        <div class="divider"></div>
+
+                        <form [formGroup]="FormRegistro">
+                            <input formControlName="Username" type="text" id="Username" class="form-control" placeholder="Introduce tu nombre" required=" " autofocus=" ">
+
+                            <input formControlName="Mail" type="Mail" id="Mail " class="form-control" placeholder="Introduce tu correo" required=" ">
+
+                            <select formControlName="Rol" name="Rol" id="Rol" class="form-control">
+                                <option>Administrador</option>
+                                <option>Normal</option>
+                            </select>
+
+                            <input formControlName="Image" type="text" id="Image" class="form-control" placeholder="Introducir URL de foto de perfil">
+
+                            <input formControlName="Password" type="password" id="Password" class="form-control " placeholder="Introduce tu contraseña..." required=" ">
+                        </form>
+                        <div class="divider"></div>
+                        <h6 class="mb-0">
+                            ¿Ya estas registrado?
+                            <a href="login" class="text-primary">¡Inicia Sesion!</a>
+                        </h6>
+
+                        <div *ngIf="errorR" class="card text-white card-body bg-danger">Error de registro</div>
+                    </div>
+                    <div class="modal-footer d-block text-center">
+                        <button (click)="register()" type="button" class="btn btn-wide btn-pill btn-shadow btn-hover-shine btn-secondary btn-lg">Crear cuenta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

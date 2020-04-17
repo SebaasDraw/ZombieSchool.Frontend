@@ -1,0 +1,39 @@
+<div class="">
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <button type="button" class="btn mr-2 mb-2 btn-primary pull-right" data-toggle="modal" data-target="#modalCerebroAdd">Agregar Cerebro</button>
+            <h5 class="card-title">Cerebros</h5>
+            <table class="mb-0 table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Descripcion</th>
+                        <th>Sabor</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cerebro of cerebros | async; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{ cerebro.Description }}</td>
+                        <td>{{ cerebro.Flavor }}</td>
+                        <td>${{ cerebro.Price }}</td>
+                        <td>
+                            <img src="{{ cerebro.Picture }}" alt="{{ cerebro.Picture }}" width="42">
+                        </td>
+                        <td>
+                            <button (click)="eliminarCerebro(cerebro._id)" class="mb-2 mr-2 border-0 btn-transition btn btn-outline-danger">
+                                <i class="fas fa-trash danger"></i>
+                            </button>
+                            <button type="button" (click)="pasarDatos(cerebro._id, cerebro.Description, cerebro.Flavor, cerebro.Price, cerebro.Picture, cerebro.UserId)" class="mb-2 mr-2 border-0 btn-transition btn btn-outline-primary" data-toggle="modal" data-target="#modalCerebroEdit">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

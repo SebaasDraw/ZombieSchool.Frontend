@@ -1,0 +1,27 @@
+<div class="">
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <h5 class="card-title">Tus pedidos</h5>
+            <table class="mb-0 table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Vendedor</th>
+                        <th>Sabor</th>
+                        <th>Precio total</th>
+                        <th>Fecha de entrega <small class="text-muted">(tiempo estimado)</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders | async; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{ order.Seller }}</td>
+                        <td>{{ order.Flavor }}</td>
+                        <td>${{ order.Price }}</td>
+                        <td>{{ order.Date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
